@@ -1,0 +1,51 @@
+{
+    "hsts": {
+        "maxAge": 31536000,
+        "includeSubDomains": true,
+        "preload": true
+    },
+    "xssFilter": { "reportUri": "/report-xss-violation" },
+    "noSniff": true,
+    "frameguard": { "action": "sameorigin" },
+    "contentSecurityPolicy": { "directives": {
+        "defaultSrc": ["'self'", "https:"],
+        "scriptSrc": ["'self'", "https://cdnjs.cloudflare.com"],
+        "styleSrc": ["'self'", "'unsafe-inline'", "https://cdnjs.cloudflare.com", "https://fonts.googleapis.com"],
+        "fontSrc": ["'self'", "data:", "https://cdnjs.cloudflare.com", "https://fonts.gstatic.com", "https://fonts.googleapis.com"],
+        "imgSrc": ["'self'", "data:"],
+        "mediaSrc": ["'self'", "https://*.youtube.com"],
+        "objectSrc": ["'none'"],
+        "childSrc": ["'self'", "https://cdnjs.cloudflare.com", "https://*.youtube.com", "https://*.googleusercontent.com"],
+        "manifestSrc": ["'self'"],
+        "formAction": ["'self'", "*.cyberdev.cf"],
+        "reportUri": "/report-csp-violation",
+        "upgradeInsecureRequests": true
+    } },
+    "referrerPolicy": { "policy": "strict-origin-when-cross-origin" },
+    "featurePolicy": { "features": {
+        "camera": ["'self'"],
+        "microphone": ["'self'"],
+        "geolocation": ["'self'"],
+        "accelerometer": ["'self'"],
+        "gyroscope": ["'self'"],
+        "magnetometer": ["'self'"],
+        "fullscreen": ["'self'"],
+        "usb": ["'none'"]
+    } },
+    "expectCt": {
+        "maxAge": 604800,
+        "reportUri": "/report-ct-violation",
+        "enforce": true
+    },
+    "hidePoweredBy": { "setTo": "node" },
+    "hpkp": {
+        "maxAge": 31536000,
+        "sha256s": [
+            "69Vb9BlwRKkCi61iilMSNXWoQGNWF7ZLV2R1aTvx3sI=",
+            "i1Invz8FXOMhSLFWIO+GSHr5raDI46nqstCLD9jpvOg=",
+            "YLh1dUR9y6Kja30RrAn7JKnbQG/uEtLMkBgFF2Fuihg=",
+            "Vjs8r4z+80wjNcr1YKepWQboSIRi63WsWXhIMN+eWys=",
+            "UVNYSuRctTt0QOa2KbkhYG/Gn+xA+/pGof+PK/CDmpw="
+        ]
+    }
+}

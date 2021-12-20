@@ -1,0 +1,14 @@
+{
+    "dbHost": "dummy.mongodb.net",
+    "dbScheme": "mongodb+srv",
+    "dbUser": "dummy",
+    "dbPassword": "dummy",
+    "dbDatabase": "dummy",
+    "dbCollection": "dummy",
+    "dbAuthSource": "dummy",
+    "dbReplicaSet": "dummy",
+    "dbReadPreference": "dummy",
+    "dbAppname": "dummy",
+    "dbSsl": "dummy",
+    "dbUrl": "mongodb+srv://dummy:dummy@dummy.mongodb.net/authSource=dummy&replicaSet=dummy&readPreference=dummy&appname=dummy&tls=dummy"
+}
