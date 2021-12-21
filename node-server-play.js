@@ -1,5 +1,3 @@
-const fs = require('fs');
-const crypto = require('crypto');
 const http = require('http');
 //const https = require('https');
 const https = require('spdy');
@@ -11,10 +9,11 @@ const routes = require('./routes-play');
 
 const httpPort = 80;
 
-const nodeServer = http.createServer((req, res) => {
-    res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
-    res.end();
-});
+// const nodeServer = http.createServer((req, res) => {
+//     res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+//     res.end();
+// });
+const nodeServer = http.createServer(routes.reqHandler);
 nodeServer.listen(httpPort);
 
 const httpsPort = 443;

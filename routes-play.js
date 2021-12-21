@@ -13,10 +13,10 @@ mongoClient.connect(mongos.dbHandler);
 
 let mongoClientCall = {};
 setTimeout(() => {
-    mongoClientCall = new mongos.mongoPlay(mongoClient, 'nodejs_te');
+    mongoClientCall = new mongos.mongoPlay(mongoClient, dbConfig.dbDatabase);
 }, 5000);
 
-//Static route handler for serving statsic contents
+//Static route handler for serving static contents
 const httpStaticCall = new httpStatic.initHttp('./static_webroot');
 
 const reqHandler = (req, res) => {
@@ -46,8 +46,8 @@ const reqHandler = (req, res) => {
         req.on('end', () => {
             $_POST = JSON.parse(JSON.stringify(querystring.parse(reqBody.toString())));
             console.log(`Post Data: ${JSON.stringify($_POST)}`);
-            mongoClientCall.dbInsertOne('api_test', $_POST);
-            mongoClientCall.dbFind('api_test', $_POST, 10, docsCallback => {
+            mongoClientCall.dbInsertOne(dbConfig.dbCollection, $_POST);
+            mongoClientCall.dbFind(dbConfig.dbCollection, $_POST, 10, docsCallback => {
                 res.setHeader('Content-Type', 'application/json');
                 res.write(JSON.stringify(docsCallback));
     

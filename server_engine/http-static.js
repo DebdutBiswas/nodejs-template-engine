@@ -15,7 +15,7 @@ class initHttp {
     
         let filePath = path.normalize(this.staticPath + urlPath);
         let fileExt = path.extname(urlPath);
-        let fileName = path.basename(urlPath);
+        // let fileName = path.basename(urlPath);
     
         let isDirPath = false;
         let isFilePath = false;
